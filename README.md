@@ -28,6 +28,22 @@ Ollama
 Mistral
  → Open-weight language model used to generate SQL
 
+## 🛠️ Installation
+
+### Prerequisites
+- Python 3.9 or higher  
+- [Ollama](https://ollama.ai/download) installed locally  
+- Mistral model downloaded:
+  ```bash
+  ollama pull mistral
+### Setup
+Clone the repo and install dependencies:
+```bash
+git clone https://github.com/LakshmiManaswini-7/sql-chatbot-streamlit.git
+cd sql-chatbot-streamlit
+pip install -r requirements.txt
+
+streamlit run single_app.py
 🧠 How it Works
 
 User uploads a CSV file.
