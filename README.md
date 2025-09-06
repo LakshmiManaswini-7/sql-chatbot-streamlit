@@ -1,100 +1,89 @@
 # SQL Chatbot from CSV using Streamlit + Ollama (Mistral)
-This repo hosts a Streamlit app powered by Ollama and the Mistral LLM. Upload a CSV and ask questions in plain English the model converts them into SQL queries, executed on your data via DuckDB. Get instant, interactive answers in a simple web interface, all running locally for privacy.
-SQL Chatbot from CSV using Streamlit + Ollama (Mistral)
+This repository contains a Streamlit application powered by Ollama and the Mistral LLM.
+It allows you to upload a CSV dataset and query it in plain English.
 
-This project is a natural language to SQL chatbot that lets you:
+Under the hood:
+
+Mistral LLM (via Ollama) converts your natural language question into an SQL query.
+
+DuckDB executes the query directly on your uploaded CSV.
+
+Streamlit displays results in a clean, interactive web interface.
+
+Everything runs locally, ensuring data privacy and speed. 🚀
+
+✨ Features
 
 Upload any CSV file
 
-Ask questions in plain English
+Ask questions in natural language (e.g., “What is the average salary per department?”)
 
-Automatically generate SQL queries using an LLM (Mistral) via Ollama
+Automatic SQL generation by Mistral LLM
 
-Execute the SQL on your data with DuckDB
+Query execution with DuckDB
 
-View results directly in a Streamlit web app
+Interactive result display (single value or full table)
 
-🚀 Tech Stack
-
-Streamlit
- → Web interface for CSV upload + chatbot
-
-DuckDB
- → In-memory SQL engine to query uploaded data
-
-Ollama
- → Runs LLMs locally on your machine
-
-Mistral
- → Open-weight language model used to generate SQL
-
-## 🛠️ Installation
-
-### Prerequisites
-- Python 3.9 or higher  
-- [Ollama](https://ollama.ai/download) installed locally  
-- Mistral model downloaded:
-  ```bash
-  ollama pull mistral
-### Setup
-Clone the repo and install dependencies:
-```bash
-git clone https://github.com/LakshmiManaswini-7/sql-chatbot-streamlit.git
-cd sql-chatbot-streamlit
-pip install -r requirements.txt
-
-streamlit run single_app.py
-🧠 How it Works
-
-User uploads a CSV file.
-
-User asks a question in natural language (e.g., “What is the average salary per department?”).
-
-The app calls Ollama → Mistral LLM, which generates an SQL query.
-
-The SQL query is executed on the uploaded CSV using DuckDB.
-
-Results are displayed in the app.
+Local & privacy-preserving with Ollama
 
 🛠️ Installation
 Prerequisites
 
 Python 3.9+
 
-Ollama
- installed and running
+ [Ollama](https://ollama.ai/download) 
+ installed locally
 
-Mistral model pulled locally:
+Pull the Mistral model:
 
 ollama pull mistral
 
-Clone & Setup
-git clone https://github.com/YOUR-USERNAME/sql-chatbot-streamlit.git
+Setup
+
+Clone the repo and install Python dependencies:
+
+git clone https://github.com/LakshmiManaswini-7/sql-chatbot-streamlit.git
 cd sql-chatbot-streamlit
 pip install -r requirements.txt
 
-▶️ Run the App
+Run
 streamlit run single_app.py
 
 
-Then open: http://localhost:8501
+Then open http://localhost:8501
+ 
 
- Project Structure
+📂 Project Structure
 ├── agent_sql.py        # Handles prompt → SQL using Ollama + Mistral
 ├── single_app.py       # Streamlit frontend app
 ├── requirements.txt    # Python dependencies
 ├── .gitignore
 └── README.md
 
-Example
+📖 Example
 
-Upload a salaries.csv with a column BasePay, then ask:
+Suppose you upload a salaries.csv file with a column BasePay.
+You ask:
 
-"What is the maximum BasePay?"
+What is the maximum BasePay?
 
-The app will generate something like:
+
+The model generates SQL:
 
 SELECT MAX(BasePay) FROM df;
 
 
-And return the result.
+And the app outputs:
+
+120000.0
+
+🤖 Why Mistral?
+
+Efficient → Runs smoothly on local hardware
+
+Open weights → Transparent and flexible for developers
+
+Strong reasoning → Great at natural language → SQL mapping
+
+Privacy-friendly → Works fully offline via Ollama
+
