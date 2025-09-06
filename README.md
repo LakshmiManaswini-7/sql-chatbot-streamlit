@@ -56,10 +56,15 @@ Then open http://localhost:8501
  
 
 📂 Project Structure
+
 ├── agent_sql.py        # Handles prompt → SQL using Ollama + Mistral
+
 ├── single_app.py       # Streamlit frontend app
+
 ├── requirements.txt    # Python dependencies
+
 ├── .gitignore
+
 └── README.md
 
 📖 Example
