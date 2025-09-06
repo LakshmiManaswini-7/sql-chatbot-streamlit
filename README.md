@@ -43,7 +43,9 @@ Setup
 Clone the repo and install Python dependencies:
 
 git clone https://github.com/LakshmiManaswini-7/sql-chatbot-streamlit.git
+
 cd sql-chatbot-streamlit
+
 pip install -r requirements.txt
 
 Run
